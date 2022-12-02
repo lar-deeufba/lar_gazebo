@@ -42,7 +42,7 @@ catkin_package(
     gazebo_ros
 )
 
-roslaunch_add_file_check(src/launch)
+roslaunch_add_file_check(launch)
 
 ###########
 ## Build ##
@@ -115,7 +115,7 @@ include_directories(
 
 # Mark other files for installation (e.g. launch and bag files, etc.)
 install(
-  DIRECTORY src
+  DIRECTORY launch maps models worlds
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

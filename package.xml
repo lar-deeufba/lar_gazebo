@@ -58,6 +58,6 @@
     <!--export path of models to gazebo enviroment-->
     <gazebo_ros
         gazebo_plugin_path="${prefix}/lib"
-        gazebo_model_path="${prefix}/src/models" />
+        gazebo_model_path="${prefix}/models" />
   </export>
 </package>

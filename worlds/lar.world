@@ -87,208 +87,208 @@
 
     <model name='lar_floor'>
       <include>
-        <uri> model://lar_floor</uri>
-        <name> floor </name>
+        <uri>model://lar_floor</uri>
+        <name>floor</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_walls'>
       <include>
-        <uri> model://lar_walls</uri>
-        <name> walls </name>
+        <uri>model://lar_walls</uri>
+        <name>walls</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_shelf'>
       <include>
-        <uri> model://lar_shelf</uri>
-        <name> shelf </name>
+        <uri>model://lar_shelf</uri>
+        <name>shelf</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_wardrobe_0'>
       <include>
-        <uri> model://lar_wardrobe</uri>
-        <name> wardrobe_0 </name>
+        <uri>model://lar_wardrobe</uri>
+        <name>wardrobe_0</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_wardrobe_1'>
       <include>
-        <uri> model://lar_wardrobe</uri>
-        <name> wardrobe_1 </name>
+        <uri>model://lar_wardrobe</uri>
+        <name>wardrobe_1</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_great_0'>
       <include>
-        <uri> model://lar_table_great</uri>
-        <name> great_table_0 </name>
+        <uri>model://lar_table_great</uri>
+        <name>great_table_0</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_great_1'>
       <include>
-        <uri> model://lar_table_great</uri>
-        <name> great_table_1 </name>
+        <uri>model://lar_table_great</uri>
+        <name>great_table_1</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_0'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_0 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_0</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_1'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_1 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_1</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_2'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_2 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_2</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_3'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_3 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_3</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_4'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_4 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_4</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_5'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_5 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_5</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_pc_6'>
       <include>
-        <uri> model://lar_table_pc</uri>
-        <name> pc_table_6 </name>
+        <uri>model://lar_table_pc</uri>
+        <name>pc_table_6</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_0'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_0 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_0</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_1'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_1 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_1</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_2'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_2 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_2</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_3'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_3 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_3</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_4'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_4 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_4</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_5'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_5 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_5</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_6'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_6 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_6</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_7'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_7 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_7</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_chair_8'>
       <include>
-        <uri> model://lar_chair</uri>
-        <name> chair_8 </name>
+        <uri>model://lar_chair</uri>
+        <name>chair_8</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='lar_table_circular'>
       <include>
-        <uri> model://lar_table_circular</uri>
-        <name> circular_table </name>
+        <uri>model://lar_table_circular</uri>
+        <name>circular_table</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='box_0'>
       <include>
-        <uri> model://box</uri>
-        <name> box_0 </name>
+        <uri>model://box</uri>
+        <name>box_0</name>
         <static>1</static>
       </include>
     </model>
 
     <model name='box_1'>
       <include>
-        <uri> model://box</uri>
-        <name> box_1 </name>
+        <uri>model://box</uri>
+        <name>box_1</name>
         <static>1</static>
       </include>
     </model>

@@ -10,7 +10,7 @@
 
     <light name='light1' type='directional'>
       <cast_shadows>0</cast_shadows>
-      <pose>5.0 0 5.0 -1.27 0 -0.06</pose>
+      <pose>5.0 0 10 -1.27 0 -0.06</pose>
       <diffuse>0.6 0.6 0.6 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <attenuation>
@@ -24,7 +24,7 @@
 
     <light name='light2' type='directional'>
       <cast_shadows>0</cast_shadows>
-      <pose>-5.0 0 5.0 0 -1.11 0.0</pose>
+      <pose>-5.0 0 10 0 -1.11 0.0</pose>
       <diffuse>0.6 0.6 0.6 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <attenuation>

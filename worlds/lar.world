@@ -715,6 +715,57 @@
       <allow_auto_disable>1</allow_auto_disable>
     </model>
 
+    <!-- Tags on the back wall -->
+    <model name='tag36_11_00000'>
+      <pose>-4.845 1.0 1.2 0 0 0</pose>
+      <include>
+        <uri>model://tag36_11_00000</uri>
+      </include>
+    </model>
+
+    <model name='tag36_11_00001'>
+      <pose>-4.845 -1.0 1.2 0 0 0</pose>
+      <include>
+        <uri>model://tag36_11_00001</uri>
+      </include>
+    </model>
+
+    <model name='tag36_11_00002'>
+      <pose>-4.845 -3.0 1.2 0 0 0</pose>
+      <include>
+        <uri>model://tag36_11_00002</uri>
+      </include>
+    </model>
+
+    <!-- Tags on the right wall -->
+    <model name='tag36_11_00003'>
+      <pose>-4.0 -3.6 1.2 0 0 1.570796</pose>
+      <include>
+        <uri>model://tag36_11_00003</uri>
+      </include>
+    </model>
+
+    <model name='tag36_11_00004'>
+      <pose>-2.0 -3.6 1.2 0 0 1.570796</pose>
+      <include>
+        <uri>model://tag36_11_00004</uri>
+      </include>
+    </model>
+
+    <model name='tag36_11_00005'>
+      <pose>0.0 -3.6 1.2 0 0 1.570796</pose>
+      <include>
+        <uri>model://tag36_11_00005</uri>
+      </include>
+    </model>
+
+    <model name='tag36_11_00006'>
+      <pose>2.0 -3.6 1.2 0 0 1.570796</pose>
+      <include>
+        <uri>model://tag36_11_00006</uri>
+      </include>
+    </model>
+
     <model name='lar_shelf'>
       <include>
         <uri>model://lar_shelf</uri>

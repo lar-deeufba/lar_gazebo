@@ -72,6 +72,17 @@ export GAZEBO_MODEL_PATH=$(rospack find lar_gazebo)'/models'
 
 If you do not want to run the command every time, put it in your `~/.bashrc`
 
+## April Tags
+
+The [AprilTags images](april_tags) were retrieved from the repository [apriltag-imgs]. Then, the [gazebo_models] generates the Gazebo models. It is worth highlighting that the size of the original images is 9 x 9 pixels. The [gazebo_models] wait images with 170 x 170 pixels. Therefore, it is necessary to resize the images to 170 x 170 pixels using the command recommended in [apriltag-imgs]:
+
+```console
+convert <small_marker>.png -scale 170 <big_marker>.png
+```
+
 ## License
 
 [BSD](https://opensource.org/licenses/BSD-2-Clause)
+
+[apriltag-imgs]: https://github.com/AprilRobotics/apriltag-imgs/tree/master/tag36h11
+[gazebo_models]: https://github.com/mikaelarguedas/gazebo_models

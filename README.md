@@ -60,6 +60,18 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+### Editing the [lar.world](worlds/lar.world)
+
+When we launch the simulation, the integration between Gazebo and ROS points out the correct path to the folder that stores the models used in the .world file. However, you must inform the Gazebo system where find the models used in the simulation to open the world without ROS. Therefore, execute the following command on the terminal used to open Gazebo (without ROS):
+
+```console
+export GAZEBO_MODEL_PATH=$(rospack find lar_gazebo)'/models'
+```
+
+> **Note:** You must have installed and configured before the lar_gazebo package for the command `rospack find lar_gazebo` to work properly, 
+
+If you do not want to run the command every time, put it in your `~/.bashrc`
+
 ## License
 
 [BSD](https://opensource.org/licenses/BSD-2-Clause)

@@ -101,7 +101,7 @@ HUSKY_REALSENSE_PARENT=top_plate_front_link   # default: top_plate_link
 
 # Extras
 # ROBOT_NAMESPACE=     # /
-# HUSKY_URDF_EXTRAS=   # empty.urdf
+HUSKY_URDF_EXTRAS=$(rospack find lar_gazebo)'/husky_urdf_extras/gazebo_ground_truth.urdf'   # empty.urdf
 # CPR_URDF_EXTRAS=     # empty.urdf
 
 set +a

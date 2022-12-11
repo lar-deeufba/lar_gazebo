@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.6'>
+<sdf version='1.7'>
   <model name='lar_walls'>
     <link name='walls'>
       <pose frame=''>0 0 0 0 0 0</pose>
@@ -21,7 +21,7 @@
       <visual name='visual'>
         <geometry>
           <mesh>
-            <uri>model://lar_walls/meshes/lar_walls_2.dae</uri>
+            <uri>model://lar_walls/meshes/lar_walls_3.dae</uri>
           </mesh>
         </geometry>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -39,7 +39,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://lar_walls/meshes/lar_walls_2.dae</uri>
+            <uri>model://lar_walls/meshes/lar_walls_3.dae</uri>
           </mesh>
         </geometry>
         <surface>

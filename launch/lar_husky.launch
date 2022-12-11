@@ -10,10 +10,13 @@
   <arg name="robot_namespace" default="/"/>
 
   <!-- Position of Husky -->
-  <arg name="x" default="0.0"/>
-  <arg name="y" default="0.0"/>
+  <arg name="x" default="4.65"/>
+  <arg name="y" default="3.0"/>
   <arg name="z" default="0.1"/>
-  <arg name="yaw" default="3.141592"/>
+  <arg name="yaw" default="0.0"/>
+
+  <!-- The origin of world frame is the Gazebo origin -->
+  <node pkg="tf" type="static_transform_publisher" name="world_to_odom_tf" args="$(arg x) $(arg y) 0 -$(arg yaw) 0 0 world odom 50" />
   
   <!-- include world launch -->
   <include file="$(find lar_gazebo)/launch/lar_world.launch">

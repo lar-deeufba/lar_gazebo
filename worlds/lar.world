@@ -105,862 +105,746 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
 
-    <model name='lar_floor'>
-      <include>
-        <uri>model://lar_floor</uri>
-        <name>floor</name>
-        <static>1</static>
-        <pose>0 -0.25 0 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name='lar_walls'>
+    <model name='lar_ufba_room'>
       <include>
         <uri>model://lar_walls</uri>
         <name>walls</name>
         <static>1</static>
-        <pose>0 1 0 0 -0 0</pose>
       </include>
-    </model>
 
-    <model name='bottom_back_wall_cable_channel'>
-      <pose>-4.85 -0.25 0.3 0 0 0</pose>
-      <link name='bottom_back_wall_cable_channel_link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+      <model name='lar_floor'>
+        <pose>4.85 3.35 0 0 0 3.141592</pose>
+        <include>
+          <uri>model://lar_floor</uri>
+          <name>floor</name>
+          <static>1</static>
+        </include>
+      </model>
+
+      <model name='bottom_back_wall_cable_channel'>
+        <pose>9.70 3.35 0.3 0 0 3.141592</pose>
+        <link name='bottom_back_wall_cable_channel_link'>
+          <inertial>
+            <mass>1</mass>
+            <inertia>
+              <ixx>0.166667</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.166667</iyy>
+              <iyz>0</iyz>
+              <izz>0.166667</izz>
+            </inertia>
+            <pose>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <name>Gazebo/Grey</name>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+              </script>
+              <shader type='pixel'>
+                <normal_map>__default__</normal_map>
+              </shader>
+              <ambient>0.3 0.3 0.3 1</ambient>
+              <diffuse>0.7 0.7 0.7 1</diffuse>
+              <specular>0.01 0.01 0.01 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+            <pose>0 0 0 0 -0 0</pose>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <surface>
+              <friction>
                 <ode>
-                  <slip>0</slip>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_0</name>
-        <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 0.8 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_1</name>
-        <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -0.2 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_2</name>
-        <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -1.2 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_3</name>
-        <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -2.2 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_4</name>
-        <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -3.2 0 0 1.570796 1.570796</pose>
-      </include>
-    </model>
-
-    <model name='top_back_wall_cable_channel'>
-      <pose>-4.85 -0.25 1.0 0 0 0</pose>
-      <link name='top_back_wall_cable_channel_link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
                 <ode>
-                  <slip>0</slip>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_0</name>
-        <pose relative_to='top_back_wall_cable_channel_link'>0.01 0.8 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_1</name>
-        <pose relative_to='top_back_wall_cable_channel_link'>0.01 -0.4 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_2</name>
-        <pose relative_to='top_back_wall_cable_channel_link'>0.01 -2.0 0 0 1.570796 1.570796</pose>
-      </include>
-    </model>
-
-    <model name='bottom_right_wall_cable_channel'>
-      <pose>-1.5 -3.6 0.3 0 0 1.570796</pose>
-      <link name='bottom_right_wall_cable_channel_link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+        </link>
+        <static>1</static>
+        <allow_auto_disable>1</allow_auto_disable>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_0</name>
+          <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 0.8 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_1</name>
+          <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -0.2 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_2</name>
+          <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -1.2 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_3</name>
+          <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -2.2 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_4</name>
+          <pose relative_to='bottom_back_wall_cable_channel_link'>0.01 -3.2 0 0 1.570796 1.570796</pose>
+        </include>
+      </model>
+      <model name='top_back_wall_cable_channel'>
+        <pose>9.70 3.35 1.0 0 0 3.141592</pose>
+        <link name='top_back_wall_cable_channel_link'>
+          <inertial>
+            <mass>1</mass>
+            <inertia>
+              <ixx>0.166667</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.166667</iyy>
+              <iyz>0</iyz>
+              <izz>0.166667</izz>
+            </inertia>
+            <pose>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <name>Gazebo/Grey</name>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+              </script>
+              <shader type='pixel'>
+                <normal_map>__default__</normal_map>
+              </shader>
+              <ambient>0.3 0.3 0.3 1</ambient>
+              <diffuse>0.7 0.7 0.7 1</diffuse>
+              <specular>0.01 0.01 0.01 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+            <pose>0 0 0 0 -0 0</pose>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <surface>
+              <friction>
                 <ode>
-                  <slip>0</slip>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_0</name>
-        <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 2.6 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_1</name>
-        <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 1.1 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_2</name>
-        <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 -0.4 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_3</name>
-        <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 -2.2 0 0 1.570796 1.570796</pose>
-      </include>
-    </model>
-
-    <model name='top_right_wall_cable_channel'>
-      <pose>-1.5 -3.6 1.0 0 0 1.570796</pose>
-      <link name='top_right_wall_cable_channel_link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.02 6.7 0.1</size>
-            </box>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
                 <ode>
-                  <slip>0</slip>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_0</name>
-        <pose relative_to='top_right_wall_cable_channel_link'>0.01 2.3 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_1</name>
-        <pose relative_to='top_right_wall_cable_channel_link'>0.01 0.3 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_2</name>
-        <pose relative_to='top_right_wall_cable_channel_link'>0.01 -1.7 0 0 1.570796 1.570796</pose>
-      </include>
-      <include>
-        <uri>model://rj45_plug</uri>
-        <name>rj45_plug_3</name>
-        <pose relative_to='top_right_wall_cable_channel_link'>0.01 -3.2 0 0 1.570796 1.570796</pose>
-      </include>
-    </model>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+        </link>
+        <static>1</static>
+        <allow_auto_disable>1</allow_auto_disable>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_0</name>
+          <pose relative_to='top_back_wall_cable_channel_link'>0.01 0.8 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_1</name>
+          <pose relative_to='top_back_wall_cable_channel_link'>0.01 -0.4 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_2</name>
+          <pose relative_to='top_back_wall_cable_channel_link'>0.01 -2.0 0 0 1.570796 1.570796</pose>
+        </include>
+      </model>
 
-    <model name='unit_cylinder'>
-      <pose>-4.45 -3.55 1.25 0 0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.145833</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.145833</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.06</radius>
-              <length>2.5</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
-          <pose>0 0 1.25 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.06</radius>
-              <length>2.5</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
+      <model name='bottom_right_wall_cable_channel'>
+        <pose>6.35 6.7 0.3 0 0 -1.570796</pose>
+        <link name='bottom_right_wall_cable_channel_link'>
+          <inertial>
+            <mass>1</mass>
+            <inertia>
+              <ixx>0.166667</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.166667</iyy>
+              <iyz>0</iyz>
+              <izz>0.166667</izz>
+            </inertia>
+            <pose>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <name>Gazebo/Grey</name>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+              </script>
+              <shader type='pixel'>
+                <normal_map>__default__</normal_map>
+              </shader>
+              <ambient>0.3 0.3 0.3 1</ambient>
+              <diffuse>0.7 0.7 0.7 1</diffuse>
+              <specular>0.01 0.01 0.01 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+            <pose>0 0 0 0 -0 0</pose>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <surface>
+              <friction>
                 <ode>
-                  <slip>0</slip>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
                 </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-    </model>
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
+                </ode>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+        </link>
+        <static>1</static>
+        <allow_auto_disable>1</allow_auto_disable>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_0</name>
+          <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 2.6 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_1</name>
+          <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 1.1 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_2</name>
+          <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 -0.4 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_3</name>
+          <pose relative_to='bottom_right_wall_cable_channel_link'>0.01 -2.2 0 0 1.570796 1.570796</pose>
+        </include>
+      </model>
 
-    <!-- Tags on the back wall -->
-    <model name='tag36_11_00000'>
-      <pose>-4.845 1.0 1.2 0 0 0</pose>
-      <include>
-        <uri>model://tag36_11_00000</uri>
-      </include>
-    </model>
+      <model name='top_right_wall_cable_channel'>
+        <pose>6.35 6.7 1.0 0 0 -1.570796</pose>
+        <link name='top_right_wall_cable_channel_link'>
+          <inertial>
+            <mass>1</mass>
+            <inertia>
+              <ixx>0.166667</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.166667</iyy>
+              <iyz>0</iyz>
+              <izz>0.166667</izz>
+            </inertia>
+            <pose>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <name>Gazebo/Grey</name>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+              </script>
+              <shader type='pixel'>
+                <normal_map>__default__</normal_map>
+              </shader>
+              <ambient>0.3 0.3 0.3 1</ambient>
+              <diffuse>0.7 0.7 0.7 1</diffuse>
+              <specular>0.01 0.01 0.01 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+            <pose>0 0 0 0 -0 0</pose>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>0.02 6.7 0.1</size>
+              </box>
+            </geometry>
+            <surface>
+              <friction>
+                <ode>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
+                </ode>
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
+                </ode>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+        </link>
+        <static>1</static>
+        <allow_auto_disable>1</allow_auto_disable>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_0</name>
+          <pose relative_to='top_right_wall_cable_channel_link'>0.01 2.3 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_1</name>
+          <pose relative_to='top_right_wall_cable_channel_link'>0.01 0.3 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_2</name>
+          <pose relative_to='top_right_wall_cable_channel_link'>0.01 -1.7 0 0 1.570796 1.570796</pose>
+        </include>
+        <include>
+          <uri>model://rj45_plug</uri>
+          <name>rj45_plug_3</name>
+          <pose relative_to='top_right_wall_cable_channel_link'>0.01 -3.2 0 0 1.570796 1.570796</pose>
+        </include>
+      </model>
 
-    <model name='tag36_11_00001'>
-      <pose>-4.845 -1.0 1.2 0 0 0</pose>
-      <include>
-        <uri>model://tag36_11_00001</uri>
-      </include>
-    </model>
+      <model name='unit_cylinder'>
+        <pose>9.10 6.68 1.25 0 0 0</pose>
+        <link name='link'>
+          <inertial>
+            <mass>1</mass>
+            <inertia>
+              <ixx>0.145833</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>0.145833</iyy>
+              <iyz>0</iyz>
+              <izz>0.125</izz>
+            </inertia>
+            <pose>0 0 0 0 -0 0</pose>
+          </inertial>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+          <visual name='visual'>
+            <geometry>
+              <cylinder>
+                <radius>0.06</radius>
+                <length>2.5</length>
+              </cylinder>
+            </geometry>
+            <material>
+              <script>
+                <name>Gazebo/Grey</name>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+              </script>
+              <shader type='pixel'>
+                <normal_map>__default__</normal_map>
+              </shader>
+              <ambient>0.3 0.3 0.3 1</ambient>
+              <diffuse>0.7 0.7 0.7 1</diffuse>
+              <specular>0.01 0.01 0.01 1</specular>
+              <emissive>0 0 0 1</emissive>
+            </material>
+            <pose>0 0 0 0 -0 0</pose>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual>
+          <collision name='collision'>
+            <laser_retro>0</laser_retro>
+            <max_contacts>10</max_contacts>
+            <pose>0 0 1.25 0 0 0</pose>
+            <geometry>
+              <cylinder>
+                <radius>0.06</radius>
+                <length>2.5</length>
+              </cylinder>
+            </geometry>
+            <surface>
+              <friction>
+                <ode>
+                  <mu>1</mu>
+                  <mu2>1</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0</slip1>
+                  <slip2>0</slip2>
+                </ode>
+                <torsional>
+                  <coefficient>1</coefficient>
+                  <patch_radius>0</patch_radius>
+                  <surface_radius>0</surface_radius>
+                  <use_patch_radius>1</use_patch_radius>
+                  <ode>
+                    <slip>0</slip>
+                  </ode>
+                </torsional>
+              </friction>
+              <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>1e+06</threshold>
+              </bounce>
+              <contact>
+                <collide_without_contact>0</collide_without_contact>
+                <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+                <collide_bitmask>1</collide_bitmask>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0</min_depth>
+                </ode>
+                <bullet>
+                  <split_impulse>1</split_impulse>
+                  <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+13</kp>
+                  <kd>1</kd>
+                </bullet>
+              </contact>
+            </surface>
+          </collision>
+        </link>
+        <static>1</static>
+        <allow_auto_disable>1</allow_auto_disable>
+      </model>
 
-    <model name='tag36_11_00002'>
-      <pose>-4.845 -3.0 1.2 0 0 0</pose>
-      <include>
-        <uri>model://tag36_11_00002</uri>
-      </include>
-    </model>
+      <!-- Tags on the back wall -->
+      <model name='tag36_11_00000'>
+        <link name='tag36_11_00000_link'/>
+        <pose>9.7 2.5 1.2 0 0 3.14143</pose>
+        <include>
+          <uri>model://tag36_11_00000</uri>
+        </include>
 
-    <!-- Tags on the right wall -->
-    <model name='tag36_11_00003'>
-      <pose>-4.0 -3.6 1.2 0 0 1.570796</pose>
-      <include>
-        <uri>model://tag36_11_00003</uri>
-      </include>
-    </model>
+        <model name='tag36_11_00001'>
+          <!-- relative_to tag36_11_00000 -->
+          <pose>0 -1.5 0 0 0 0</pose>
+          <include>
+            <uri>model://tag36_11_00001</uri>
+          </include>
+        </model>
 
-    <model name='tag36_11_00004'>
-      <pose>-2.0 -3.6 1.2 0 0 1.570796</pose>
-      <include>
-        <uri>model://tag36_11_00004</uri>
-      </include>
-    </model>
+        <model name='tag36_11_00002'>
+          <!-- relative_to tag36_11_00000 -->
+          <pose>0 -3.0 0 0 0 0</pose>
+          <include>
+            <uri>model://tag36_11_00002</uri>
+          </include>
+        </model>
+      </model>
 
-    <model name='tag36_11_00005'>
-      <pose>0.0 -3.6 1.2 0 0 1.570796</pose>
-      <include>
-        <uri>model://tag36_11_00005</uri>
-      </include>
-    </model>
+      <!-- Tags on the left wall -->
+      <model name='tag36_11_00003'>
+        <pose>8.40 6.7 1.2 0 0 -1.57068</pose>
+        <include>
+          <uri>model://tag36_11_00003</uri>
+        </include>
 
-    <model name='tag36_11_00006'>
-      <pose>2.0 -3.6 1.2 0 0 1.570796</pose>
-      <include>
-        <uri>model://tag36_11_00006</uri>
-      </include>
-    </model>
+        <model name='tag36_11_00004'>
+          <!-- relative_to tag36_11_00003 -->
+          <pose>0 -1.5 0 0 0 0</pose>
+          <include>
+            <uri>model://tag36_11_00004</uri>
+          </include>
+        </model>
 
-    <model name='lar_shelf'>
+        <model name='tag36_11_00005'>
+          <!-- relative_to tag36_11_00003 -->
+          <pose>0 -3.0 0 0 0 0</pose>
+          <include>
+            <uri>model://tag36_11_00005</uri>
+          </include>
+        </model>
+
+        <model name='tag36_11_00006'>
+          <!-- relative_to tag36_11_00003 -->
+          <pose>0 -4.5 0 0 0 0</pose>
+          <include>
+            <uri>model://tag36_11_00006</uri>
+          </include>
+        </model>
+      </model>
+
       <include>
         <uri>model://lar_shelf</uri>
         <name>shelf</name>
         <static>1</static>
-        <pose>4.0 -3.35 0 0 0 1.57068</pose>
+        <pose>0.75 6.45 0 0 0 -1.57068</pose>
       </include>
-    </model>
 
-    <model name='lar_wardrobe_0'>
       <include>
+        <pose>0.25 4.3 0 0 0 0</pose>
         <uri>model://lar_wardrobe</uri>
         <name>wardrobe_0</name>
         <static>1</static>
-        <pose>1.25 5.3 0 0 0 -1.57121</pose>
       </include>
-    </model>
 
-    <model name='lar_wardrobe_1'>
       <include>
+        <pose>3.5 -2.25 0 0 0 1.57068</pose>
         <uri>model://lar_wardrobe</uri>
         <name>wardrobe_1</name>
         <static>1</static>
-        <pose>4.6 -0.9 0 0 0 3.14143</pose>
       </include>
-    </model>
 
-    <model name='lar_table_great_0'>
       <include>
+        <pose>5.4 -2.05 0 0 0 1.570680</pose>
         <uri>model://lar_table_great</uri>
-        <name>great_table_0</name>
+        <name>big_table_0</name>
         <static>1</static>
-        <pose>1.9 -2.0 0 0 0 0</pose>
       </include>
-    </model>
 
-    <model name='lar_table_great_1'>
       <include>
+        <pose>2.75 5.45 0 0 0 0</pose>
         <uri>model://lar_table_great</uri>
-        <name>great_table_1</name>
+        <name>big_table_1</name>
         <static>1</static>
-        <pose>-0.55 5.15 0 0 -0 1.5708</pose>
       </include>
-    </model>
 
-    <model name='lar_table_pc_0'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_0</name>
-        <static>1</static>
-        <pose>-4.30 1.68 0 0 0 0</pose>
-      </include>
-    </model>
+      <model name='midle_room_pc_stations'>
+        <pose>4.8 1.45 0 0 0 3.14159</pose>
+        <include>
+          <uri>model://pc_station</uri>
+          <name>pc_station_0</name>
+        </include>
+        <include>
+          <pose>-1.25 0 0 0 0 0</pose>
+          <uri>model://pc_station</uri>
+          <name>pc_station_1</name>
+        </include>
+        <include>
+          <pose>-2.50 0 0 0 0 0</pose>
+          <uri>model://pc_station</uri>
+          <name>pc_station_2</name>
+        </include>
+      </model>
 
-    <model name='lar_table_pc_1'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_1</name>
-        <static>1</static>
-        <pose>-3.29 1.68 0 0 0 0</pose>
-      </include>
-    </model>
+      <model name='front_wall_pc_stations'>
+        <pose>0.35 3 0 0 0 -1.570680</pose>
+        <include>
+          <uri>model://pc_station</uri>
+          <name>pc_station_0</name>
+        </include>
+        <include>
+          <pose>1.05 0 0 0 0 0</pose>
+          <uri>model://pc_station</uri>
+          <name>pc_station_1</name>
+        </include>
+        <include>
+          <pose>2.30 0 0 0 0 0</pose>
+          <uri>model://pc_station</uri>
+          <name>pc_station_2</name>
+        </include>
+      </model>
 
-    <model name='lar_table_pc_2'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_2</name>
-        <static>1</static>
-        <pose>-2.28 1.68 0 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name='lar_table_pc_3'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_3</name>
-        <static>1</static>
-        <pose>-1.27 1.68 0 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name='lar_table_pc_4'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_4</name>
-        <static>1</static>
-        <pose>-0.26 1.68 0 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name='lar_table_pc_5'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_5</name>
-        <static>1</static>
-        <pose>4 2.8 0 0 0 -3.14159</pose>
-      </include>
-    </model>
-
-    <model name='lar_table_pc_6'>
-      <include>
-        <uri>model://lar_table_pc</uri>
-        <name>pc_table_6</name>
-        <static>1</static>
-        <pose>2.9 2.8 0 0 -0 3.14159</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_0'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_0</name>
-        <static>1</static>
-        <pose>-4.2805 1.9 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_1'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_1</name>
-        <static>1</static>
-        <pose>-3.2705 1.9 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_2'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_2</name>
-        <static>1</static>
-        <pose>-2.2605 1.9 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_3'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_3</name>
-        <static>1</static>
-        <pose>-1.2505 1.9 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_4'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_4</name>
-        <static>1</static>
-        <pose>-0.2405 1.9 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_5'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_5</name>
-        <static>1</static>
-        <pose>2.880530 2.58 0 0 -0 1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_6'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_6</name>
-        <static>1</static>
-        <pose>3.98053 2.58 0 0 -0 1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_7'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_7</name>
-        <static>1</static>
-        <pose>2.8682 1.178849 0 0 0 -1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_chair_8'>
-      <include>
-        <uri>model://lar_chair</uri>
-        <name>chair_8</name>
-        <static>1</static>
-        <pose>2.82926 0.221151 0 0 -0 1.5708</pose>
-      </include>
-    </model>
-
-    <model name='lar_table_circular'>
       <include>
         <uri>model://lar_table_circular</uri>
         <name>circular_table</name>
         <static>1</static>
-        <pose>2.84873 0.721151 0 0 -0 0</pose>
+        <pose>2.8 2 0 0 0 0</pose>
       </include>
     </model>
 

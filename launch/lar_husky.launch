@@ -5,6 +5,7 @@
   <arg name="world_name" default="$(find lar_gazebo)/worlds/lar.world"/>
   <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts gazebo gui" />
+  <arg name="hector_slam" default="false" doc="Launch or not hector_slam"/>
 
   <!--  husky_gazebo args -->
   <arg name="robot_namespace" default="/"/>
@@ -15,9 +16,6 @@
   <arg name="z" default="0.1"/>
   <arg name="yaw" default="0.0"/>
 
-  <!-- The origin of world frame is the Gazebo origin -->
-  <node pkg="tf" type="static_transform_publisher" name="world_to_odom_tf" args="$(arg x) $(arg y) 0 -$(arg yaw) 0 0 world odom 50" />
-  
   <!-- include world launch -->
   <include file="$(find lar_gazebo)/launch/lar_world.launch">
     <arg name="world_name" value="$(arg world_name)"/>
@@ -33,4 +31,6 @@
     <arg name="z" value="$(arg z)"/>
     <arg name="yaw" value="$(arg yaw)"/>
   </include>
+
+  <include if="$(arg hector_slam)" file="$(find lar_gazebo)/launch/hector_slam.launch"/>
 </launch>

@@ -11,8 +11,10 @@
   <arg name="map_size" default="256"/>
   <arg name="map_start_x" default="0.5"/>
   <arg name="map_start_y" default="0.5" />
+  <arg name="enable_rviz" default="true" />
+  <param name="use_sim_time" value="true" />
 
-  <node pkg="rviz" type="rviz" name="rviz"
+  <node if="$(arg enable_rviz)" pkg="rviz" type="rviz" name="rviz"
     args="-d $(find lar_gazebo)/config/hector_slam.rviz"/>
 
   <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">

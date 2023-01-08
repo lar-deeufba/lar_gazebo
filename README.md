@@ -3,7 +3,7 @@
 
 Repository containing the simulated environment of the Robotics Laboratory (*LaR*) at UFBA and the robot Husky from ClearPath to be used with [Gazebo].
 
-![3d model of LaR in gazebo](https://drive.google.com/uc?export=view&id=1uXXjb6ia2QoiZ3wRi_qFUjFoO-EgZ79l)
+![3d model of LaR in gazebo](doc/images/lar_gazebo.jpg)
 
 This package has been tested under ROS Noetic on Ubuntu 20.04 with Gazebo 11.11. The LaR Gazebo is a research repository that may change often, and any fitness for a particular purpose is disclaimed.
 

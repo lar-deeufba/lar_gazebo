@@ -1,1 +1,0 @@
-/home/ttrindader/lar_gazebo_ws/lar_gazebo/src/launch/lar_world.launch.py

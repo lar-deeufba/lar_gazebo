@@ -1,10 +1,25 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="default">
+    <plugin filename="libignition-gazebo-physics-system.so"
+      name="ignition::gazebo::systems::Physics"></plugin>
+    <plugin filename="libignition-gazebo-user-commands-system.so"
+      name="ignition::gazebo::systems::UserCommands"></plugin>
+    <plugin filename="libignition-gazebo-scene-broadcaster-system.so"
+      name="ignition::gazebo::systems::SceneBroadcaster"></plugin>
+
+    <plugin filename="libignition-gazebo-sensors-system.so"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu"></plugin>
+
+    <plugin filename="libignition-gazebo-navsat-system.so" name="ignition::gazebo::systems::NavSat"></plugin>
 
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
-    <atmosphere type="adiabatic"/>
+    <atmosphere type="adiabatic" />
 
     <physics name="default_physics" default="true" type="ode">
       <max_step_size>0.01</max_step_size>
@@ -20,8 +35,8 @@
 
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>0</latitude_deg>
-      <longitude_deg>0</longitude_deg>
+      <latitude_deg>-12.99946</latitude_deg>
+      <longitude_deg>-38.50994</longitude_deg>
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
@@ -57,9 +72,9 @@
                 <mu2>50</mu2>
               </ode>
             </friction>
-            <bounce/>
+            <bounce />
             <contact>
-              <ode/>
+              <ode />
             </contact>
           </surface>
           <max_contacts>10</max_contacts>

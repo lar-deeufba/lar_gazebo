@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/ttrindader/lar_gazebo_ws/lar_gazebo" FILES "/home/ttrindader/lar_gazebo_ws/lar_gazebo/build/lar_gazebo/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/lar_gazebo" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")

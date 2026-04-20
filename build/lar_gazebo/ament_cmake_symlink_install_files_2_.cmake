@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/ttrindader/lar_gazebo_ws/lar_gazebo" FILES "/opt/ros/rolling/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/lar_gazebo/environment")

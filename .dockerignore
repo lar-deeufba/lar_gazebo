@@ -1,0 +1,11 @@
+.git
+build
+devel
+install
+log
+.logs
+.cache
+*.bag
+*.db3
+*.pyc
+__pycache__

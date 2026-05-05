@@ -1,0 +1,29 @@
+services:
+  lar_gazebo:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.noetic
+      args:
+        USERNAME: ${USER_NAME:-ros}
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+    image: lar-gazebo:noetic
+    container_name: lar_gazebo_noetic
+    network_mode: host
+    ipc: host
+    privileged: true
+    environment:
+      DISPLAY: ${DISPLAY}
+      QT_X11_NO_MITSHM: "1"
+      LIBGL_ALWAYS_INDIRECT: "0"
+      NVIDIA_DRIVER_CAPABILITIES: all
+      XDG_RUNTIME_DIR: /tmp/runtime-${USER_NAME:-ros}
+    volumes:
+      - .:/ws/src/lar_gazebo:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.gazebo:/home/${USER_NAME:-ros}/.gazebo:rw
+      - /dev/dri:/dev/dri
+    working_dir: /ws
+    stdin_open: true
+    tty: true
+    command: bash

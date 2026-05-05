@@ -1,0 +1,135 @@
+# Dockerfile para o pacote lar_gazebo no ROS Noetic / Ubuntu 20.04 / Gazebo Classic 11.
+# Deve ser usado a partir da raiz do repositório lar_gazebo:
+#   docker compose build
+
+FROM osrf/ros:noetic-desktop-full
+
+ARG DEBIAN_FRONTEND=noninteractive
+ARG USERNAME=ros
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+SHELL ["/bin/bash", "-c"]
+
+# Dependências principais do pacote lar_gazebo e ferramentas de desenvolvimento.
+# Observação: os pacotes opcionais do Husky/Realsense/LMS1XX são mantidos aqui
+# para que o launch lar_husky.launch e o husky_accessories.sh tenham maior chance
+# de funcionar sem instalação manual adicional.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash-completion \
+    build-essential \
+    ca-certificates \
+    curl \
+    dbus-x11 \
+    git \
+    less \
+    mesa-utils \
+    nano \
+    sudo \
+    vim \
+    wget \
+    x11-apps \
+    python3-catkin-tools \
+    python3-pip \
+    python3-rosdep \
+    python3-vcstool \
+    ros-noetic-gazebo-plugins \
+    ros-noetic-gazebo-ros \
+    ros-noetic-gazebo-ros-control \
+    ros-noetic-hector-gazebo-plugins \
+    ros-noetic-hector-geotiff-launch \
+    ros-noetic-hector-mapping \
+    ros-noetic-hector-slam \
+    ros-noetic-husky-control \
+    ros-noetic-husky-description \
+    ros-noetic-husky-gazebo \
+    ros-noetic-husky-viz \
+    ros-noetic-joint-state-publisher \
+    ros-noetic-lms1xx \
+    ros-noetic-realsense2-description \
+    ros-noetic-robot-state-publisher \
+    ros-noetic-ros-control \
+    ros-noetic-ros-controllers \
+    ros-noetic-rviz \
+    ros-noetic-teleop-twist-keyboard \    
+    ros-noetic-xacro \
+    && rm -rf /var/lib/apt/lists/*
+
+# Usuário não-root para evitar arquivos gerados como root no volume do host.
+RUN if ! getent group "${USER_GID}" >/dev/null; then groupadd --gid "${USER_GID}" "${USERNAME}"; fi \
+    && if ! id -u "${USERNAME}" >/dev/null 2>&1; then \
+        useradd --uid "${USER_UID}" --gid "${USER_GID}" -m "${USERNAME}" -s /bin/bash; \
+       fi \
+    && echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > "/etc/sudoers.d/${USERNAME}" \
+    && chmod 0440 "/etc/sudoers.d/${USERNAME}"
+
+ENV ROS_DISTRO=noetic
+ENV ROS_WS=/ws
+ENV CATKIN_WS=/ws
+ENV NVIDIA_DRIVER_CAPABILITIES=all
+ENV QT_X11_NO_MITSHM=1
+
+RUN mkdir -p ${ROS_WS}/src
+WORKDIR ${ROS_WS}
+
+# Copia o repositório local para dentro da imagem. Como o docker-compose também
+# monta o diretório atual em /ws/src/lar_gazebo, alterações locais aparecem no container.
+COPY . ${ROS_WS}/src/lar_gazebo
+
+# Resolve dependências declaradas no package.xml e compila o workspace.
+# O apt acima já cobre os principais pacotes, mas o rosdep protege contra mudanças futuras.
+RUN source /opt/ros/noetic/setup.bash \
+    && rosdep init 2>/dev/null || true \
+    && rosdep update --rosdistro noetic \
+    && rosdep install --from-paths src --ignore-src -r -y --rosdistro noetic \
+    && catkin build --no-status \
+    && chown -R "${USER_UID}:${USER_GID}" ${ROS_WS}
+
+COPY docker/entrypoint.sh /ros_entrypoint_lar.sh
+RUN chmod +x /ros_entrypoint_lar.sh
+
+
+
+# Configura ambiente ROS e autocomplete para shells interat# Configura ambiente ROS e autocomplete para shells interativos
+RUN USER_HOME="$(getent passwd "${USERNAME}" | cut -d: -f6)" \
+    && mkdir -p "${USER_HOME}" \
+    && touch "${USER_HOME}/.bashrc" \
+    && cat <<'EOF' >> "${USER_HOME}/.bashrc"
+
+# Bash completion geral
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
+
+# ROS Noetic
+if [ -f /opt/ros/noetic/setup.bash ]; then
+    source /opt/ros/noetic/setup.bash
+fi
+
+# Workspace lar_gazebo
+if [ -f /ws/devel/setup.bash ]; then
+    source /ws/devel/setup.bash
+fi
+
+# Acessórios do Husky, se existirem
+if [ -f /ws/src/lar_gazebo/husky_accessories.sh ]; then
+    source /ws/src/lar_gazebo/husky_accessories.sh
+fi
+
+# Modelos do lar_gazebo para o Gazebo
+if command -v rospack >/dev/null 2>&1 && rospack find lar_gazebo >/dev/null 2>&1; then
+    LAR_GAZEBO_PATH="$(rospack find lar_gazebo)"
+    export GAZEBO_MODEL_PATH="${LAR_GAZEBO_PATH}/models:${GAZEBO_MODEL_PATH:-}"
+    export GAZEBO_RESOURCE_PATH="${LAR_GAZEBO_PATH}:${GAZEBO_RESOURCE_PATH:-}"
+fi
+
+EOF
+
+RUN USER_HOME="$(getent passwd "${USERNAME}" | cut -d: -f6)" \
+    && chown "${USER_UID}:${USER_GID}" "${USER_HOME}/.bashrc"
+
+USER ${USERNAME}
+WORKDIR ${ROS_WS}
+
+ENTRYPOINT ["/ros_entrypoint_lar.sh"]
+CMD ["bash"]

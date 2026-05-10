@@ -3,7 +3,7 @@ project(lar_gazebo)
 
 find_package(ament_cmake REQUIRED)
 
-foreach(dir launch maps models worlds)
+foreach(dir launch maps models worlds config)
   if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/${dir}")
     install(
       DIRECTORY src/${dir}
